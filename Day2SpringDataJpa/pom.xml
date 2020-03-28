@@ -34,6 +34,15 @@
 			<artifactId>ojdbc</artifactId>
 			<version>6</version>
 	</dependency>
+	<!-- <dependency>
+		<groupId>com.oracle</groupId>
+		<artifactId>ojdbc</artifactId>
+		<version>6</version>
+		<scope>system</scope>
+		<systemPath>d:/ojdbc6.jar</systemPath>
+	</dependency> -->
+	
+	
 	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

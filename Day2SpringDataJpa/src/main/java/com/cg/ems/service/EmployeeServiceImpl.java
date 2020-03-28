@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.cg.ems.dao.EmployeeDao;
 import com.cg.ems.entity.Employee;
+import com.cg.ems.exception.EmployeeException;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -23,14 +24,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee findEmployeeById(int employeeId) {
+	public Employee findEmployeeById(int employeeId) throws EmployeeException
+	{
 		
 		Employee emp = null;
 		if( employeeDao.existsById(employeeId))
 		{
 			emp = employeeDao.findById(employeeId).get();
 		}
-		
+		else
+		{
+			throw new EmployeeException(employeeId+ " ID NOT FOUND ");
+		}
 		return emp;
 	}
 
@@ -52,6 +57,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 			 employeeDao.deleteById(employeeId);
 		}
 		return emp ;
+	}
+
+	@Override
+	public List<Employee> findAllEmployeeBySalary(double low, double high) {
+		
+		return employeeDao.findAllEmployeeBySalary(low, high);
 	}
 
 	
