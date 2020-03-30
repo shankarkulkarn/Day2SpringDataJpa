@@ -24,6 +24,17 @@ public class EmployeeController {
 	EmployeeService  employeeService;
 	
 
+	@GetMapping("employee/char/{ch}")
+	public ResponseEntity<List<Employee>>  findAllEmployeesByCharacter(@PathVariable("ch") char ch)
+	{
+	  
+		List<Employee> list = employeeService.findAllEmployeeByCharacterName(ch);
+		ResponseEntity<List<Employee>>  rt = new ResponseEntity<List<Employee>>(list,HttpStatus.OK);
+		return rt;
+		
+	}
+	
+	
 	@GetMapping("employee")
 	public ResponseEntity<List<Employee>>  findAllEmployees()
 	{

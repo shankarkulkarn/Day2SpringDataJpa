@@ -16,6 +16,9 @@ public interface EmployeeDao extends JpaRepository<Employee, Integer>
 	  @Query("FROM Employee where salary between :low and :high")
 	  public List<Employee>  findAllEmployeeBySalary(@Param("low")double low,@Param("high") double high);
 	  
+	  @Query("From Employee where employeeName like :ch% ")
+	  public List<Employee>  findAllEmployeeByCharacterName(@Param("ch") char ch);
+	  
 	  
 	  
 }

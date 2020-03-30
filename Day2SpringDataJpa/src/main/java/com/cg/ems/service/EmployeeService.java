@@ -12,4 +12,5 @@ public interface EmployeeService {
 	public  Employee  addEmployee(Employee employee);
 	public  Employee  deleteEmployeeById(int employeeId);
 	public List<Employee>  findAllEmployeeBySalary(double low,double high);
+	public List<Employee>  findAllEmployeeByCharacterName(char ch);
 }

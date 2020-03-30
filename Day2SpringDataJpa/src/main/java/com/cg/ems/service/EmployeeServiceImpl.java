@@ -65,5 +65,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDao.findAllEmployeeBySalary(low, high);
 	}
 
+	@Override
+	public List<Employee> findAllEmployeeByCharacterName(char ch) {
+		System.out.println(" Character = "+ch);
+		return employeeDao.findAllEmployeeByCharacterName(ch);
+	}
+
 	
 }
