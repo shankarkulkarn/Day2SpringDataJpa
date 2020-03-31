@@ -29,11 +29,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
    
-    <dependency> 
+    <!-- <dependency> 
 			<groupId>oracle</groupId>
 			<artifactId>ojdbc</artifactId>
 			<version>6</version>
-	</dependency>
+	</dependency> -->
 	<!-- <dependency>
 		<groupId>com.oracle</groupId>
 		<artifactId>ojdbc</artifactId>
